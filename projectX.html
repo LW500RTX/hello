@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butterflies of Sri Lanka</title>
+    <!-- Include Alpine.js -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="projectX.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet"/>
+
+</head>
+<body>
+    <div x-data="cons">
+        <h1 x-text="depc01" id="title"></h1>
+        <p x-text="description"></p>
+        <h2 x-text="endemic"></h2>
+        <ul>
+            <template x-for="butterfly in endemicButterflies">
+                <li x-text="butterfly"></li>
+            </template>
+        </ul>
+    </div>
+    <button onclick="showLoginDialog()">Edit-Content</button>
+
+    <!-- Pop up dialog -->
+    <div class="form-container">
+    <dialog id="login-dialog">
+        <h2>Edit</h2>
+        <button type="button" class="close" id="btnClose"><i class="ri-close-fill"></i></button>
+        <h1 id="dialogTitle" contenteditable="true"></h1> <!-- Updated: removed @input event -->
+        <button type="button" id="btn">Submit</button>
+    </dialog>
+    <!-- End of pop up dialog -->
+</div>
+<script src="projectX.js"></script>
+
+</body>
+</html>
